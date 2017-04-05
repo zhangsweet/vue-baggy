@@ -5,11 +5,14 @@
       <span v-else :class="prefixCls + '-placeholder'">请选择</span>
       <i class="v-icon v-icon-arrow-down-b"></i>
     </div>
-    <div v-show="visible" :class="prefixCls + '-dropdown'">
-      <ul :class="prefixCls + '-list'">
-        <slot></slot>
-      </ul>
-    </div>
+
+    <transition name="v-select-zoom">
+      <div v-show="visible" :class="prefixCls + '-dropdown'">
+        <ul :class="prefixCls + '-list'">
+          <slot></slot>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 

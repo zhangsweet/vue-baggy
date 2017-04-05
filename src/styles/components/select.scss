@@ -18,6 +18,7 @@ $select-height: 36px;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
+  transition: all .2s ease-in-out;
 
   &:hover {
     border-color: #8391a5;
@@ -66,7 +67,10 @@ $select-height: 36px;
   border-radius: 4px;
   border: 1px solid #d1dbe5;
   box-sizing: border-box;
-  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  transform: scaleY(1);
+  transform-origin: center top;
+  transition: transform .3s cubic-bezier(.23, 1, .32, 1), opacity .3s cubic-bezier(.23, 1, .32, 1);
 
   .#{$select-prefix-cls}-list {
     margin: 0;
@@ -79,6 +83,17 @@ $select-height: 36px;
       transform: rotate(180deg) translateY(-1px);
     }
   }
+
+  .#{$select-prefix-cls}-selection,
+  .#{$select-prefix-cls}-selection:hover {
+    border-color: #20a0ff;
+  }
+}
+
+.#{$select-prefix-cls}-zoom-enter,
+.#{$select-prefix-cls}-zoom-leave-active {
+  opacity: 0;
+  transform: scaleY(0);
 }
 
 .#{$option-prefix-cls} {

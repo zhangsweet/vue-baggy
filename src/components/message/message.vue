@@ -31,7 +31,7 @@
         duration: 3000,
         timer: null,
         type: 'info'
-      }
+      };
     },
 
     computed: {
