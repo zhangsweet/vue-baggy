@@ -6,6 +6,7 @@
       <router-link to="/radio">radio</router-link>
       <router-link to="/checkbox">checkbox</router-link>
       <router-link to="/select">select</router-link>
+      <router-link to="/input">input</router-link>
       <!-- <router-link to="/scrollbar">scrollbar</router-link> -->
       <router-link to="/notification">notification</router-link>
       <router-link to="/message">message</router-link>

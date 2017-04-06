@@ -9,6 +9,7 @@ import Scrollbar from './pages/scrollbar';
 import Notification from './pages/notification';
 import Select from './pages/select';
 import Message from './pages/message';
+import Input from './pages/input';
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,9 @@ const routes = [{
 }, {
   path: '/message',
   component: Message
+}, {
+  path: '/input',
+  component: Input
 }];
 
 const router = new VueRouter({

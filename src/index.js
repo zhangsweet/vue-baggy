@@ -6,6 +6,7 @@ import Scrollbar from './components/scrollbar';
 import Notification from './components/notification';
 import Select from './components/select';
 import Message from './components/message';
+import Input from './components/input';
 
 import './styles/index.scss';
 
@@ -19,6 +20,7 @@ const components = {
   Scrollbar,
   Select,
   Option: Select.Option,
+  Input
 };
 
 const install = function(Vue, opts = {}) {
