@@ -1,11 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var OpenBrowserPlugin = require('open-browser-webpack-plugin')
+
 
 module.exports = {
   entry: './examples/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: './dist/',
     filename: 'build.js'
   },
   module: {
@@ -59,12 +62,22 @@ module.exports = {
     }
   },
   devServer: {
+    publicPath: '/dist/',
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    inline: true,
+    hot: true
   },
   performance: {
     hints: false
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: __dirname + '/index.html',
+      template: __dirname + '/examples/index.html',
+      inject: 'body'
+    })
+  ],
   devtool: '#eval-source-map'
 }
 
@@ -84,6 +97,15 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    })
+  ])
+} else {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true
+    }),
+    new OpenBrowserPlugin({ 
+      url: 'http://localhost:8080' 
     })
   ])
 }
