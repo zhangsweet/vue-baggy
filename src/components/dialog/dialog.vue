@@ -8,16 +8,20 @@
     </transition>
 
     <transition :name="prefixCls + '-ease'">
-      <div :class="prefixCls" v-show="visible">
+      <div :class="prefixCls" :style="styles" v-show="visible">
         <!-- header -->
         <div :class="prefixCls + '-header'">
-          <span class="header-title">标题</span>
-          <i class="header-close v-icon v-icon-android-close"
+          <span class="header-title">{{ title }}</span>
+          <i v-if="closable"
+             class="header-close v-icon v-icon-android-close"
              @click="handleClose"></i>
         </div>
 
         <!-- body -->
-        <div :class="prefixCls + '-body'">
+        <div v-if="$slots.body">
+          <slot name="body"></slot>
+        </div>
+        <div :class="prefixCls + '-body'" v-else>
           <slot></slot>
         </div>
 
@@ -37,7 +41,14 @@ const prefixCls = 'v-dialog';
     name: prefixCls,
 
     props: {
-      value: Boolean
+      value: Boolean,
+      title: String,
+      width: [Number, String],
+      minWidth: [Number, String],
+      closable: {
+        default: true,
+        type: Boolean
+      }
     },
 
     data() {
@@ -45,6 +56,23 @@ const prefixCls = 'v-dialog';
         prefixCls,
         visible: false
       };
+    },
+
+    computed: {
+      styles() {
+        let style = {};
+
+        if (this.minWidth) {
+          style['min-width'] = `${this.minWidth}px`;
+        }
+
+        if (this.width) {
+          style['width'] = `${this.width}px`;
+          style['min-width'] = 'initial';
+        }
+
+        return style;
+      }
     },
 
     watch: {
@@ -72,7 +100,7 @@ const prefixCls = 'v-dialog';
     mounted() {
       if (this.value) {
         this.visible = this.value;
-      } 
+      }
     }
   };
 </script>
