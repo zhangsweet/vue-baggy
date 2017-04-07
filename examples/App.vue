@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <p>
-      <router-link to="/button">button</router-link>
       <router-link to="/icon">icon</router-link>
+      <router-link to="/button">button</router-link>
       <router-link to="/radio">radio</router-link>
       <router-link to="/checkbox">checkbox</router-link>
       <router-link to="/select">select</router-link>
@@ -10,6 +10,7 @@
       <!-- <router-link to="/scrollbar">scrollbar</router-link> -->
       <router-link to="/notification">notification</router-link>
       <router-link to="/message">message</router-link>
+      <router-link to="/dialog">dialog</router-link>
     </p>
     <router-view></router-view>
   </div>
@@ -46,7 +47,8 @@ li {
 }
 
 a {
-  margin: 0 5px;
+  display: inline-block;
+  margin: 5px;
   color: #20a0ff;
 }
 

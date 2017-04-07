@@ -10,6 +10,7 @@ import Notification from './pages/notification';
 import Select from './pages/select';
 import Message from './pages/message';
 import Input from './pages/input';
+import Dialog from './pages/dialog';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,9 @@ const routes = [{
 }, {
   path: '/input',
   component: Input
+}, {
+  path: '/dialog',
+  component: Dialog
 }];
 
 const router = new VueRouter({
