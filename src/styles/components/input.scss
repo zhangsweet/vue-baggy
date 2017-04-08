@@ -31,6 +31,15 @@ $input-prefix-cls: "v-input";
   &:focus {
     border-color: #20a0ff;
   }
+
+  &[disabled],
+  &[disabled]:hover
+  &[disabled]:focus {
+    background-color: #eef1f6;
+    border-color: #d1dbe5;
+    color: #bbb;
+    cursor: not-allowed;
+  }
 }
 
 .#{$input-prefix-cls}-textarea {
