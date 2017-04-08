@@ -44,8 +44,8 @@
         return [
           `${prefixCls}`,
           {
-            [`${prefixCls}-visible`]: !!this.visible,
-            [`${prefixCls}-disabled`]: !!this.disabled
+            [`${prefixCls}-visible`]: this.visible,
+            [`${prefixCls}-disabled`]: this.disabled
           }
         ];
       }
