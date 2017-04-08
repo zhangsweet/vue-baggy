@@ -77,6 +77,7 @@ $select-height: 36px;
   }
 }
 
+// 下拉可见
 .#{$select-prefix-cls}-visible {
   .#{$select-prefix-cls}-selection {
     .v-icon-arrow-down-b {
@@ -87,6 +88,19 @@ $select-height: 36px;
   .#{$select-prefix-cls}-selection,
   .#{$select-prefix-cls}-selection:hover {
     border-color: #20a0ff;
+  }
+}
+
+.#{$select-prefix-cls}-disabled {
+  .#{$select-prefix-cls}-selection,
+  .#{$select-prefix-cls}-selection:hover {
+    background-color: #eef1f6;
+    border-color: #d1dbe5;
+    cursor: not-allowed;
+
+    .#{$select-prefix-cls}-value {
+      color: #bbb;
+    }
   }
 }
 
