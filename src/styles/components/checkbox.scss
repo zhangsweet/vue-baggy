@@ -86,6 +86,7 @@ $checkbox-prefix-cls: "v-checkbox";
     .#{$checkbox-prefix-cls}-inner:hover {
       background-color: #eef1f6;
       border-color: #d1dbe5;
+      cursor: not-allowed;
     }
   }
 
@@ -95,6 +96,7 @@ $checkbox-prefix-cls: "v-checkbox";
       .#{$checkbox-prefix-cls}-inner:hover {
         background-color: #d1dbe5;
         border-color: #d1dbe5;
+        cursor: not-allowed;
       }
     }
   }  
