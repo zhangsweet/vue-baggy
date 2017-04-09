@@ -6,6 +6,7 @@
         type="radio"
         :value="label"
         :class="originalClasses"
+        :disabled="disabled"
         v-model="model">
     </span>
     <slot>{{ value }}</slot>
@@ -19,12 +20,9 @@
     name: prefixCls,
 
     props: {
-      value: {
-        type: [String, Number]
-      },
-      label: {
-        type: [String, Number]
-      }
+      value: [String, Number],
+      label: [String, Number],
+      disabled: Boolean
     },
 
     computed: {
@@ -32,7 +30,8 @@
         return [
           `${prefixCls}`,
           {
-            [`${prefixCls}-checked`]: (this.model === this.label)
+            [`${prefixCls}-checked`]: (this.model === this.label),
+            [`${prefixCls}-disabled`]: this.disabled
           }
         ];
       },

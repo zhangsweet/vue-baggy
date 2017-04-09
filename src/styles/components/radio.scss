@@ -76,3 +76,28 @@ $radio-prefix-cls: "v-radio";
     }
   }
 }
+
+// 禁用状态
+.#{$radio-prefix-cls}-disabled {
+  color: #bbb;
+  cursor: not-allowed;
+
+  .#{$radio-prefix-cls}-input {
+    .#{$radio-prefix-cls}-inner,
+    .#{$radio-prefix-cls}-inner:hover {
+      background-color: #eef1f6;
+      border-color: #d1dbe5;
+      cursor: not-allowed;
+    }
+  }
+
+  &.#{$radio-prefix-cls}-checked {
+    .#{$radio-prefix-cls}-input {
+      .#{$radio-prefix-cls}-inner {
+        &:after {
+          background-color: #d1dbe5;
+        }
+      }
+    }
+  }
+}

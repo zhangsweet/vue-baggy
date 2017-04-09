@@ -6,6 +6,7 @@
         type="checkbox"
         :value="label"
         :class="originalClasses"
+        :disabled="disabled"
         v-model="model">
     </span>
     <slot>{{ value }}</slot>
@@ -21,12 +22,9 @@
     name: prefixCls,
 
     props: {
-      value: {
-        type: [Array, Boolean]
-      },
-      label: {
-        type: [String, Number]
-      }
+      value: [Array, Boolean],
+      label: [String, Number],
+      disabled: Boolean
     },
 
     computed: {
@@ -34,7 +32,8 @@
         return [
           `${prefixCls}`,
           {
-            [`${prefixCls}-checked`]: this.checkedClasses
+            [`${prefixCls}-checked`]: this.checkedClasses,
+            [`${prefixCls}-disabled`]: this.disabled
           }
         ];
       },

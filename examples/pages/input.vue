@@ -4,6 +4,9 @@
     <v-input v-model="input" placeholder="请输入..."></v-input>
     <p class="result">{{ input }}</p>
 
+    <p>禁用状态</p>
+    <v-input v-model="disabledInput" placeholder="请输入..." disabled></v-input>
+
     <p>密码框</p>
     <v-input
       v-model="password"
@@ -29,6 +32,7 @@
     data() {
       return {
         input: '',
+        disabledInput: '',
         password: '',
         textarea: ''
       };

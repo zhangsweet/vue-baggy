@@ -27,9 +27,8 @@
     directives: { clickoutside },
 
     props: {
-      value: {
-        type: [String]
-      }
+      value: String,
+      disabled: Boolean
     },
 
     data() {
@@ -45,7 +44,8 @@
         return [
           `${prefixCls}`,
           {
-            [`${prefixCls}-visible`]: !!this.visible
+            [`${prefixCls}-visible`]: this.visible,
+            [`${prefixCls}-disabled`]: this.disabled
           }
         ];
       }
@@ -53,6 +53,10 @@
 
     methods: {
       toggleMenu() {
+        if (this.disabled) {
+          return;
+        }
+
         this.visible = !this.visible;
       },
 

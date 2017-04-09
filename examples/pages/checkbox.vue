@@ -8,6 +8,11 @@
     <v-checkbox v-model="once" label="orange">橘子</v-checkbox>
     <p class="result">{{ once }}</p>
 
+    <!-- 禁用状态 -->
+    <v-checkbox v-model="fruit2" label="apple" disabled>苹果</v-checkbox>
+    <v-checkbox v-model="fruit2" label="banana" disabled>香蕉</v-checkbox>
+    <p class="result">{{ fruit2 }}</p>
+
     <p>多选框组</p>
     <v-checkbox v-model="fruit" label="apple">苹果</v-checkbox>
     <v-checkbox v-model="fruit" label="banana">香蕉</v-checkbox>
@@ -32,6 +37,7 @@
         checked: false,
         once: [],
         fruit: [],
+        fruit2: ['banana'],
         city: []
       }
     }

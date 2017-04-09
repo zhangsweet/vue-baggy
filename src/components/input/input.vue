@@ -5,6 +5,7 @@
       :type="type"
       :value="currentValue"
       :class="prefixCls + '-text'"
+      :disabled="disabled"
       :placeholder="placeholder"
       @focus="handleFocus"
       @blur="handleBlur"
@@ -13,6 +14,7 @@
       v-else
       :value="currentValue"
       :class="prefixCls + '-textarea'"
+      :disabled="disabled"
       :placeholder="placeholder"
       :rows="rows"
       @focus="handleFocus"
@@ -38,6 +40,7 @@
       },
       value: [String, Number],
       placeholder: [String, Number],
+      disabled: Boolean,
       rows: {
         default: 2,
         type: [String, Number]

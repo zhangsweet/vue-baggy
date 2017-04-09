@@ -3,6 +3,11 @@
     <p>单选框</p>
     <v-radio v-model="checked" label="orange">橘子</v-radio>
     <p class="result">{{ checked }}</p>
+
+    <p>禁用状态</p>
+    <v-radio v-model="fruit2" label="apple" disabled>苹果</v-radio>
+    <v-radio v-model="fruit2" label="banana" disabled>香蕉</v-radio>
+    <p class="result">{{ fruit2 }}</p>
     
     <p>单选框组</p>
     <v-radio v-model="fruit" label="apple">苹果</v-radio>
@@ -27,6 +32,7 @@
       return {
         checked: '',
         fruit: 'banana',
+        fruit2: 'banana',
         city: 'shanghai'
       };
     }
