@@ -43,6 +43,7 @@ const prefixCls = 'v-dialog';
     props: {
       value: Boolean,
       title: String,
+      top: String,
       width: [Number, String],
       minWidth: [Number, String],
       closable: {
@@ -61,6 +62,10 @@ const prefixCls = 'v-dialog';
     computed: {
       styles() {
         let style = {};
+
+        if (this.top) {
+          style['top'] = `${this.top}`;
+        }
 
         if (this.minWidth) {
           style['min-width'] = `${this.minWidth}px`;
